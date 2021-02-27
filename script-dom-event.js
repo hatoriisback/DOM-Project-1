@@ -23,27 +23,27 @@ document.querySelector('.check').addEventListener('click', function () {
   console.log(guess, typeof guess);
 
   if (!guess) {
-    document.querySelector('.message').textContent = 'No Number!🚫';
+    document.querySelector('.message').textContent = 'MASUKIN ANGKA CUK!🚫';
   } else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = 'YOU SMART 😛';
+    document.querySelector('.message').textContent = 'PINTAR CUK 😛';
     score++;
     document.querySelector('.score').textContent = score;
   } else if (guess > secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = '📈 Too high!';
+      document.querySelector('.message').textContent = '📈 Ketinggian woi!';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      document.querySelector('.message').textContent = 'YOU LOSE!😣';
+      document.querySelector('.message').textContent = 'Yah KALAH!😣';
       document.querySelector('.score').textContent = 0;
     }
   } else if (guess < secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent = '📉 Too low!';
+      document.querySelector('.message').textContent = '📉 Kerendahan woi!';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      document.querySelector('.message').textContent = 'YOU LOSE!😣';
+      document.querySelector('.message').textContent = 'Yah KALAH!😣';
       document.querySelector('.score').textContent = 0;
     }
   }
