@@ -13,9 +13,9 @@
 
 // // Handling Click Events & Implementing the Game Logic // //
 const secretNumber = Math.trunc(Math.random() * 10) + 1;
-let score = 10;
+let score = 20;
 
-// document.querySelector('.number').textContent = secretNumber;
+document.querySelector('.number').textContent = secretNumber;
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
@@ -25,9 +25,7 @@ document.querySelector('.check').addEventListener('click', function () {
   if (!guess) {
     document.querySelector('.message').textContent = 'MASUKIN ANGKA CUK!🚫';
   } else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = 'PINTAR CUK, TEBAK LAGI 😛';
-    score++;
-    document.querySelector('.score').textContent = score;
+    document.querySelector('.message').textContent = 'Tumben pintar, TEBAK LAGI YUK😛';
   } else if (guess > secretNumber) {
     if (score > 1) {
       document.querySelector('.message').textContent = '📈 Ketinggian woi!';
@@ -47,7 +45,7 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.message').textContent = 'Kurang Beruntung!😣';
       document.querySelector('.number').textContent = secretNumber;
       document.querySelector('.score').textContent = 0;
-    }
+    } 
   }
 });
 
