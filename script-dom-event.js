@@ -91,63 +91,64 @@
 
 
 // // Refactoring Code - Stay DRY // //
-// 'use strict';
 
-// let secretNumber = Math.trunc(Math.random() * 20) + 1;
-// let score = 20;
-// let highscore = 0;
+'use strict';
 
-// document.querySelector('.number').textContent = secretNumber;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
+let score = 20;
+let highscore = 0;
 
-// const displayMessage =  function (message) {
-//     document.querySelector('.message').textContent = message;
-// }
+document.querySelector('.number').textContent = secretNumber;
 
-// document.querySelector('.check').addEventListener('click', function () {
-//   const guess = Number(document.querySelector('.guess').value);
+const displayMessage =  function (message) {
+    document.querySelector('.message').textContent = message;
+}
 
-//   // When there is no input
-//   if (!guess) {
-//       displayMessage('MASUKIN ANGKA BOS!🚫')
+document.querySelector('.check').addEventListener('click', function () {
+  const guess = Number(document.querySelector('.guess').value);
 
-//     // When the Player Wins
-//   } else if (guess === secretNumber) {
-//     displayMessage('Tumben pintar, TEBAK LAGI YUK😛')
-//     document.querySelector('.number').textContent = secretNumber;
+  // When there is no input
+  if (!guess) {
+      displayMessage('MASUKIN ANGKA BOS!🚫')
 
-//     document.querySelector('body').style.backgroundColor = '#60b347';
-//     document.querySelector('.number').style.width = '30rem';
+    // When the Player Wins
+  } else if (guess === secretNumber) {
+    displayMessage('Tumben pintar, TEBAK LAGI YUK😛')
+    document.querySelector('.number').textContent = secretNumber;
 
-//     if (score > highscore) {
-//       highscore = score;
-//       document.querySelector('.highscore').textContent = highscore;
-//     }
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    document.querySelector('.number').style.width = '30rem';
 
-//     // When Guess is Wrong
-//   } else if (guess !== secretNumber) {
-//     if (score > 1) {
-//       displayMessage(guess > secretNumber ? '📈 Ketinggian woi!' : '📉 Kerendahan woi!')
-//       score--;
-//       document.querySelector('.score').textContent = score;
-//     } else {
-//       displayMessage('Kurang Beruntung!😣')
-//       document.querySelector('.number').textContent = secretNumber;
-//       document.querySelector('.score').textContent = 0;
-//     }
-//   }
-// });
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    }
 
-//   document.querySelector('.again').addEventListener('click', function () {
-//   score = 20;
-//   secretNumber = Math.trunc(Math.random() * 20) + 1;
+    // When Guess is Wrong
+  } else if (guess !== secretNumber) {
+    if (score > 1) {
+      displayMessage(guess > secretNumber ? '📈 Ketinggian woi!' : '📉 Kerendahan woi!')
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      displayMessage('Kurang Beruntung!😣')
+      document.querySelector('.number').textContent = secretNumber;
+      document.querySelector('.score').textContent = 0;
+    }
+  }
+});
 
-//   displayMessage('Start guessing again...!')
-//   document.querySelector('.score').textContent = score;
-//   document.querySelector('.number').textContent = '?';
-//   document.querySelector('.guess').value = '';
+  document.querySelector('.again').addEventListener('click', function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
 
-//   document.querySelector('body').style.backgroundColor = '#222';
+  displayMessage('Start guessing again...!')
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').value = '';
 
-//   document.querySelector('.number').style.width = '15rem';
-// });
+  document.querySelector('body').style.backgroundColor = '#222';
+
+  document.querySelector('.number').style.width = '15rem';
+});
 /*  */
